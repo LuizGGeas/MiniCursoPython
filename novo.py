@@ -116,7 +116,7 @@ for i in tupla:
     if i%2 == 0:
         print(i)
 
-"""
+
 text = input("entre com o texto: ")
 dic = {'a': 0,
         'e': 0,
@@ -136,3 +136,91 @@ for i in text:
         dic[i] +=1
 
 print(dic)
+
+a = []
+for i in range(3):
+    linha = []
+    for j in range(3):
+        linha.append(int(input()))
+    a.append(linha)
+
+for i in a:
+    print(i)
+soma = 0
+for i in a:
+    for b in i:
+        if b%2 == 0:
+            soma+=b
+print(soma)
+print(sum(a[2]))
+
+print(max(a[1]))
+
+corredores = []
+
+for i in range(6):
+    volta = []
+    for j in range(10):
+        volta.append(float(input(f"tempo do corredor {i} na volta {j}: ")))
+    corredores.append(volta)
+
+melhor = { 'volta': -1.0, 'piloto':-1.0 }
+media = []
+for i in corredores:
+    media.append(sum(i))
+    media[corredores.index(i)]/=10
+    if melhor['volta'] < min(i):
+        melhor['volta'], melhor['piloto'] = i.index(max(i)), corredores.index(i) 
+
+print(f"melhor volta: {melhor['volta']} - piloto: {melhor['piloto']}")
+print(f'melhor media: {min(media)} - piloto: {media.index(min(media))}')
+
+
+def func(a:int, b:int, c:int) -> int:
+    return a+b+c
+print(func(1, 2, 3))
+
+
+def func(a:int):
+    f = 0
+    s = 1
+    print(f'f - {f}')
+    print(f's - {s}')
+    while(s < a):
+        f = f+s
+        s = s+f
+        print(f'f - {f}')
+        print(f's - {s}')
+
+func(30)
+
+
+def func(a:int) -> int:
+    return int(str(a)[::-1])
+
+i = int(input('entre com o número: '))
+print(func(i))
+"""
+
+didt = {}
+
+def add_in_dict(dict, nome:str, tel:str):
+    if nome not in dict:
+        if(input("voce quer adicionar este elemento na agenda? ") == "sim"):
+            dict[nome] = tel
+
+def consultar_telefone(dict, nome:str):
+    return dict.get(nome, "não existe")
+        
+
+def deletar_telefone(dict, tel:str):
+    if tel in dict.values():
+        del dict[dict.index(tel)]
+
+def deletar_contato(dict, nome:str):
+    return dict.pop(nome, "não existe")
+
+def buscar(dict, nome:str):
+    print(dict[nome])
+
+print(dict)
