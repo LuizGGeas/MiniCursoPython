@@ -1,3 +1,4 @@
+"""
 import time
 import datetime
 a = 0
@@ -55,3 +56,83 @@ elif carne == 3:
 if tipoPag == 1:
     total -= 0.05*total
 print(f'total: {total:.2f}')
+
+
+a  = [ 12, 3, 7, 9, 6, 8, 4, 2, 0, 7]
+
+print(max(a))
+
+a = 6
+for i in range(10):
+    i+=1
+    print(f'{a}X{i} = {a*i}')
+
+ide = []
+pesol = []
+altural = []
+
+entrada = 1
+while(entrada == 1) :
+    id = int(input('digite a matrícula da pessoa: '))
+    if id == 0 : 
+        entrada = 0
+    else:
+        peso = float(input('digite o peso da pessoa: '))
+        altura = float(input('digite a altura da pessoa: '))
+        ide.append(id)
+        pesol.append(peso)
+        altural.append(altura)
+else:
+    if len(pesol) > 0:
+        print(f'mais gordo: {max(pesol)}, mais magro: {min(pesol)}')
+    if len(altural) > 0:
+        print(f'mais alto: {max(altural)}, mais baixo: {min(altural)}')
+    print(f'media de peso: {sum(pesol)/len(pesol)}') if len(pesol) > 0 else print('lista de pesos vazia')
+    print(f'media de altura: {sum(altural)/len(altural)}') if len(altural) > 0 else print('lista de alturas vazia')
+
+times = "bucks", "raptors", "76ers", "celtics", "pacers", "nets", "magic", "pistons", "hornets", "heat"
+print(times[:5])
+print(times[6:])
+print(times.index("celtics"))
+print(sorted(times))
+
+tupla = ()
+
+for i in range(4):
+    tupla += (int(input("entre com o novo elemento: ")), )
+
+j = 0
+for i in tupla:
+    if i == 9:
+        j+=1
+print(f'quantidade de elementos iguais a 9: {j}')
+
+for i in range(len(tupla)):
+    if tupla[i] == 3:
+        print(f'índice do primeiro número 3 na tupla: {i}')
+        break
+print('numeros pares na tupla: ')
+for i in tupla:
+    if i%2 == 0:
+        print(i)
+
+"""
+text = input("entre com o texto: ")
+dic = {'a': 0,
+        'e': 0,
+        'i': 0,
+        'o': 0,
+        'u': 0}
+for i in text:
+    if i == 'a':
+        dic[i] +=1
+    elif i == 'e':
+        dic[i] +=1
+    elif i == 'i':
+        dic[i] +=1
+    elif i == 'o':
+        dic[i] +=1
+    elif i == 'u':
+        dic[i] +=1
+
+print(dic)
